@@ -34,3 +34,16 @@ Route::put('/animals/{id}', [AnimalController::class, 'update']);
 # method delete
 Route::delete('/animals/{id}', [AnimalController::class, 'destroy']);
 
+# get all resorce student
+# method get
+Route::get('/students' , [StudentController::class, 'index']);
+
+# menambahkan resource student
+# method post
+Route::post('/students', [StudentController::class, 'store']);
+
+# method put
+Route::put('/mahasiswas/{id}', [StudentController::class, 'update']);
+
+# method delete
+Route::delete('/mahasiswas/{id}', [StudentController::class, 'delete']);
