@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\AnimalsController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AnimalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,32 +19,31 @@ use App\Http\Controllers\AnimalController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 # method get
-Route::get('/animals', [AnimalController::class, 'index']);
+Route::get('/animals', [AnimalsController::class, 'index']);
 
 # method post
-Route::post('/animals', [AnimalController::class, 'store']);
+Route::post('/animals', [AnimalsController::class, 'store']);
 
 # method put
-Route::put('/animals/{id}', [AnimalController::class, 'update']);
+Route::put('/animals/{id}', [AnimalsController::class, 'update']);
 
 # method delete
-Route::delete('/animals/{id}', [AnimalController::class, 'destroy']);
+Route::delete('/animals/{id}', [AnimalsController::class, 'destroy']);
 
-# get all resorce student
 # method get
-Route::get('/students' , [StudentController::class, 'index']);
+Route::get('/student', [StudentController::class, 'index']);
 
-# menambahkan resource student
 # method post
-Route::post('/students', [StudentController::class, 'store']);
+Route::post('/student', [StudentController::class, 'store']);
 
 # method put
-Route::put('/mahasiswas/{id}', [StudentController::class, 'update']);
+Route::put('/student/{id}', [StudentController::class, 'update']);
 
 # method delete
-Route::delete('/mahasiswas/{id}', [StudentController::class, 'delete']);
+Route::delete('/student/{id}', [StudentController::class, 'destroy']);
+
+# mendapatkan detail data student
+Route::get('/student/{id}', [StudentController::class, 'show'] );
